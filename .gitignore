@@ -1,0 +1,51 @@
+# 编译输出目录
+build/
+Debug/
+Release/
+out/
+
+# 编译产生的中间文件和目标文件
+*.o
+*.d
+*.obj
+*.lst
+*.map
+*.su
+
+# 固件和二进制可执行文件
+*.hex
+*.bin
+*.elf
+*.axf
+*.out
+
+# IDE 临时配置与用户本地文件 (视使用的工具链而定)
+.vscode/          # 如果你想在团队中统一 VS Code 配置，可以删除这行
+*.uvoptx          # Keil 用户的本地调试配置
+*.uvguix.*        # Keil 用户界面布局文件
+.settings/        # Eclipse/STM32CubeIDE 用户的本地设置
+*.launch          # 调试启动配置
+
+# 操作系统生成的缓存文件
+.DS_Store
+Thumbs.db
+
+# Keil MDK 编译输出目录
+project/Objects/
+project/Listings/
+
+# Keil 编译中间文件和日志
+*.crf
+*.dep
+*.htm
+*.lnp
+*.sct
+*.Bak
+*.iex
+*build_log*
+
+# Keil 用户本地调试和界面配置文件 (注意保留 .uvprojx 工程文件)
+*.uvoptx
+*.uvguix.*
+JLinkSettings.ini
+*.scvd

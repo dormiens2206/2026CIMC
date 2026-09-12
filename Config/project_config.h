@@ -1,0 +1,13 @@
+#ifndef PROJECT_CONFIG_H
+#define PROJECT_CONFIG_H
+
+#define SAMPLE_TEST_MODE 0
+
+#define APP_ENABLE_PRELIMINARY_TASKS 0
+
+#define APP_RS485_DEBUG_MODE      0
+#define APP_TF_TEST_ENABLE        0
+
+
+
+#endif
