@@ -1,5 +1,4 @@
 #include "Function.h"
-#include "app_display.h"
 #include "app_modbus_map.h"
 #include "app_param.h"
 #include "app_sample.h"

@@ -525,6 +525,23 @@ void Protocol_Dispatch(ProtocolFrame *frame)
 	}
 	break;
 
+	case CMD_BREAK_Q: // 0x0606: 断线检测查询
+	{
+		uint8_t break_flag;
+
+		if (frame->len != 0)
+		{
+			Protocol_SendError(device_id);
+			break;
+		}
+
+		/* 返回值 1 字节：未断线 = 0x00，断线 = 0xFF */
+		break_flag = (g_sample_data.current_break != 0U) ? 0xFF : 0x00;
+
+		Protocol_SendFrame(device_id, FRAME_TYPE_REPLY, frame->cmd, &break_flag, 1);
+	}
+	break;
+
 	default:
 		Protocol_SendError(device_id);
 		break;

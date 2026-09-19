@@ -84,15 +84,15 @@ void USART485_Config(uint8_t databits, uint8_t stopbits, uint8_t parity)
 
     if(parity == 1U)
     {
-        usart_parity_set(RS485_USART, USART_PM_ODD);
+        usart_parity_config(RS485_USART, USART_PM_ODD);
     }
     else if(parity == 2U)
     {
-        usart_parity_set(RS485_USART, USART_PM_EVEN);
+        usart_parity_config(RS485_USART, USART_PM_EVEN);
     }
     else
     {
-        usart_parity_set(RS485_USART, USART_PM_NONE);
+        usart_parity_config(RS485_USART, USART_PM_NONE);
     }
 }
 

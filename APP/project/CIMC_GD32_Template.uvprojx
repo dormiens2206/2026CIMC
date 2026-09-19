@@ -829,11 +829,6 @@
           <GroupName>Application</GroupName>
           <Files>
             <File>
-              <FileName>app_display.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Application\app_display.c</FilePath>
-            </File>
-            <File>
               <FileName>app_modbus_map.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Application\app_modbus_map.c</FilePath>

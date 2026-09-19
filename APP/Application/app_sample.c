@@ -493,7 +493,7 @@ uint8_t Sample_GetCurrentError(void)
     return g_sample_data.current_error;
 }
 
-/*
+
 static int32_t Sample_FloatToX100(float value)
 {
     if(value >= 0.0f)
@@ -505,10 +505,6 @@ static int32_t Sample_FloatToX100(float value)
         return (int32_t)(value * 100.0f - 0.5f);
     }
 }
-
-*/
-
-
 
 
 

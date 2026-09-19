@@ -20,13 +20,13 @@ static void Modbus_PutFloat32(uint16_t *reg, float value)
     union
     {
         float f;
-        uint32_t u32;
+        uint32_t u_32;
     } converter;
 
     converter.f = value;
 
-    reg[0] = (uint16_t)(converter.u32 >> 16);
-    reg[1] = (uint16_t)(converter.u32 & 0xFFFF);
+    reg[0] = (uint16_t)(converter.u_32 >> 16);
+    reg[1] = (uint16_t)(converter.u_32 & 0xFFFF);
 }
 
 // 将两个 uint16_t 寄存器转换为 float
@@ -35,10 +35,10 @@ static float Modbus_GetFloat32(const uint16_t *reg)
     union
     {
         float f;
-        uint32_t u32;
+        uint32_t u_32;
     } converter;
 
-    converter.u32 = ((uint32_t)reg[0] << 16) | (uint32_t)reg[1];
+    converter.u_32 = ((uint32_t)reg[0] << 16) | (uint32_t)reg[1];
 
     return converter.f;
 }
@@ -156,7 +156,7 @@ static void App_ModbusHoldingFromParam(void)
 void App_ModbusInit(void)
 {
     //上电：把Flash恢复出来的参数装进Holding寄存器
-    App_ModbusHoldingFromRaram();
+    App_ModbusHoldingFromParam();
 
     g_modbus_reconfigure_pending = 0U; // 清除配置变更请求标志
 
@@ -350,7 +350,7 @@ void App_ModbusReconfigureTask(void)
         return;
     }
 
-    if(xMBPortSeriallsTxIdle() != TRUE)
+    if(xMBPortSerialIsTxIdle() != TRUE)
     {
         return;
     }

@@ -2,22 +2,15 @@
 #include "mb.h"
 #include "mbport.h"
 #include "string.h"
+#include "app_modbus_map.h"
+#include "modbus_register_map.h"
+
+extern uint16_t REG_INPUT_BUF[REG_INPUT_SIZE];
+extern uint16_t REG_HOLD_BUF[REG_HOLD_SIZE];
+extern uint8_t REG_COILS_BUF[REG_COILS_SIZE];
+extern uint8_t REG_DISC_BUF[REG_DISC_SIZE];
 
 /*
-// 声明输入寄存器缓冲区，用于存储十路输入寄存器的值
-uint16_t REG_INPUT_BUF[REG_INPUT_SIZE] = { 0 };
-
-// 声明保持寄存器缓冲区，用于存储十路保持寄存器的值
-uint16_t REG_HOLD_BUF[REG_HOLD_SIZE] = { 0 };
-
-// 定义十路线圈的大小
-uint8_t REG_COILS_BUF[REG_COILS_SIZE] = { 0,0,0,0,0,0,0,0,0,0 };
-
-// 声明离散量缓冲区，并初始化，用于存储十路离散量的状态
-uint8_t REG_DISC_BUF[REG_DISC_SIZE] = { 1,1,1,1,0,0,0,0,1,1 };
-*/
-
-/**
  * @brief 设置寄存器中的数值
  *
  * @param reg_type 寄存器类型

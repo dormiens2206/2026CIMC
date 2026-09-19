@@ -618,7 +618,7 @@ Boot_Status Boot_Backup_App(void)
         memcpy(copy_buf, (uint8_t *)src_addr, copy_len);
 
         // 写入备份区
-        if(Boot_Write_Area(backup_addr, copy_buf, copy_len) != BOOT_OK)
+        if(Boot_Write_InternalFlash(backup_addr, copy_buf, copy_len) != BOOT_OK)
         {
             return BOOT_ERROR;
         }

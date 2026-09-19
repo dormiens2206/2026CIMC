@@ -79,8 +79,11 @@
 #define CMD_ALARM_Q       0x0602  //查询告警记录
 #define CMD_ALARM_CLEAR   0x0603  //清除告警记录
 #define CMD_BREAK_Q       0x0606  //断线检测查询
+/*
 #define CMD_CONFIG_Q      0x0604    //查询操作日志
 #define CMD_CONFIG_CLEAR  0x0605   //清除操作日志
+*/
+
 
 //特殊命令字
 #define CMD_HEART_BEAT    0x8888     //心跳包命令字
